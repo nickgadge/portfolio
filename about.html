@@ -114,23 +114,48 @@
 </head>
 <body class="min-h-screen">
 
-  <!-- Navbar -->
-  <nav class="bg-gray-800 shadow-lg fixed w-full top-0 z-50 backdrop-blur-sm bg-opacity-90">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="text-2xl font-bold">
-        <span class="gradient-text">Nikhil Gadge</span>
-      </div>
-      <div class="space-x-8 hidden md:flex">
-        <a href="index.html" class="nav-link hover:text-blue-400">Home</a>
-        <a href="about.html" class="nav-link hover:text-emerald-400">About</a>
-        <a href="projects.html" class="nav-link hover:text-purple-400">Projects</a>
-        <a href="contact.html" class="nav-link hover:text-cyan-400">Contact</a>
-      </div>
-      <button class="md:hidden text-xl">
+<!-- Navbar -->
+<nav class="bg-gray-800 shadow-lg fixed w-full top-0 z-50 backdrop-blur-sm bg-opacity-90">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="text-2xl font-bold">
+      <span class="gradient-text">Nikhil Gadge</span>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="space-x-8 hidden md:flex">
+      <a href="index.html" class="nav-link hover:text-blue-400">Home</a>
+      <a href="about.html" class="nav-link hover:text-emerald-400">About</a>
+      <a href="projects.html" class="nav-link hover:text-purple-400">Projects</a>
+      <a href="contact.html" class="nav-link hover:text-cyan-400">Contact</a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-white text-2xl focus:outline-none">
         <i class="fas fa-bars"></i>
       </button>
     </div>
-  </nav>
+  </div>
+
+  <!-- Mobile Menu Links (Hidden by default) -->
+  <div id="menu" class="hidden flex-col space-y-4 px-6 py-4 md:hidden bg-gray-800">
+    <a href="index.html" class="nav-link hover:text-blue-400">Home</a>
+    <a href="about.html" class="nav-link hover:text-emerald-400">About</a>
+    <a href="projects.html" class="nav-link hover:text-purple-400">Projects</a>
+    <a href="contact.html" class="nav-link hover:text-cyan-400">Contact</a>
+  </div>
+</nav>
+
+<!-- Script to toggle mobile menu -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
 
   <!-- About Section -->
   <section class="pt-32 pb-20 max-w-6xl mx-auto px-6">

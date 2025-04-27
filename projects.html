@@ -69,23 +69,48 @@
 </head>
 <body class="bg-gray-900 text-gray-100 min-h-screen">
 
-  <!-- Navbar -->
-  <nav class="bg-gray-800 shadow-lg fixed w-full top-0 z-50 backdrop-blur-sm bg-opacity-90">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="text-2xl font-bold">
-        <span class="gradient-text">Nikhil Gadge</span>
-      </div>
-      <div class="space-x-8 hidden md:flex">
-        <a href="index.html" class="nav-link hover:text-blue-400">Home</a>
-        <a href="about.html" class="nav-link hover:text-emerald-400">About</a>
-        <a href="projects.html" class="nav-link hover:text-purple-400">Projects</a>
-        <a href="contact.html" class="nav-link hover:text-cyan-400">Contact</a>
-      </div>
-      <button class="md:hidden text-xl">
+<!-- Navbar -->
+<nav class="bg-gray-800 shadow-lg fixed w-full top-0 z-50 backdrop-blur-sm bg-opacity-90">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="text-2xl font-bold">
+      <span class="gradient-text">Nikhil Gadge</span>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="space-x-8 hidden md:flex">
+      <a href="index.html" class="nav-link hover:text-blue-400">Home</a>
+      <a href="about.html" class="nav-link hover:text-emerald-400">About</a>
+      <a href="projects.html" class="nav-link hover:text-purple-400">Projects</a>
+      <a href="contact.html" class="nav-link hover:text-cyan-400">Contact</a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-white text-2xl focus:outline-none">
         <i class="fas fa-bars"></i>
       </button>
     </div>
-  </nav>
+  </div>
+
+  <!-- Mobile Menu Links (Hidden by default) -->
+  <div id="menu" class="hidden flex-col space-y-4 px-6 py-4 md:hidden bg-gray-800">
+    <a href="index.html" class="nav-link hover:text-blue-400">Home</a>
+    <a href="about.html" class="nav-link hover:text-emerald-400">About</a>
+    <a href="projects.html" class="nav-link hover:text-purple-400">Projects</a>
+    <a href="contact.html" class="nav-link hover:text-cyan-400">Contact</a>
+  </div>
+</nav>
+
+<!-- Script to toggle mobile menu -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
 
   <!-- Projects Section -->
   <section class="pt-32 pb-20 bg-gradient-to-br from-gray-800 to-gray-900">
@@ -102,7 +127,7 @@
             <div class="bg-blue-500/20 p-3 rounded-lg text-blue-400">
               <i class="fas fa-sms text-2xl"></i>
             </div>
-            <h2 class="text-2xl font-bold">📩 SMS Spam Detection</h2>
+            <h2 class="text-2xl font-bold">SMS Spam Detection</h2>
           </div>
           <p class="text-gray-300 mb-6">
             A machine learning-based system to detect spam messages using Natural Language Processing techniques with 98% accuracy.
@@ -124,7 +149,7 @@
             <div class="bg-purple-500/20 p-3 rounded-lg text-purple-400">
               <i class="fas fa-comment-dots text-2xl"></i>
             </div>
-            <h2 class="text-2xl font-bold">🗣 Text to Speech Converter</h2>
+            <h2 class="text-2xl font-bold">Text to Speech Converter</h2>
           </div>
           <p class="text-gray-300 mb-6">
             Developed an application that converts input text into realistic human speech using AI models, supporting multiple languages.
@@ -146,7 +171,7 @@
             <div class="bg-green-500/20 p-3 rounded-lg text-green-400">
               <i class="fas fa-link text-2xl"></i>
             </div>
-            <h2 class="text-2xl font-bold">🔗 URL Shortener</h2>
+            <h2 class="text-2xl font-bold">URL Shortener</h2>
           </div>
           <p class="text-gray-300 mb-6">
             A smart URL shortener with ad-based redirection, analytics dashboard, and custom domains. Handles 10,000+ daily requests.
@@ -168,7 +193,7 @@
             <div class="bg-cyan-500/20 p-3 rounded-lg text-cyan-400">
               <i class="fas fa-leaf text-2xl"></i>
             </div>
-            <h2 class="text-2xl font-bold">🌱 EcoTracker</h2>
+            <h2 class="text-2xl font-bold">EcoTracker</h2>
           </div>
           <p class="text-gray-300 mb-6">
             An innovative platform that tracks eco-friendly habits, calculates carbon footprints, and suggests sustainability improvements.
